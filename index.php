@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./Estilos/estilos.css">
-    <title>Productos</title>
+    <title>PageJuanCarlos</title>
 </head>
 <body>
     <header>
