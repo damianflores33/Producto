@@ -5,6 +5,18 @@ function selectCategoria(){
     $result = concultarCategorias();
     $select = '' .
         '<select class="form-select" id="categoria" name="categoria" required>' .
+        '    <option value="" selected>Seleccionar categor&iacute;a</option>';
+    foreach($result as $row){
+        $select .= '<option value="' . $row["id_categoria"] . '">' . $row["nombre_categoria"] . '</option>';
+        }
+        $select .= '</select>';
+    return $select;
+}
+
+function selectCategoria_galeria($accion){
+    $result = concultarCategorias();
+    $select = '' .
+        '<select class="form-select" id="categoria" name="categoria" required '.$accion.'>' .
         '    <option value="">Seleccionar categor&iacute;a</option>';
     foreach($result as $row){
         $select .= '<option value="' . $row["id_categoria"] . '">' . $row["nombre_categoria"] . '</option>';
@@ -66,7 +78,7 @@ function guardarNuevoProducto(){
 
     // Validar tipo de archivo
     if ($tipoArchivo != "image/jpeg") {
-    $msj = "Error: Solo se permiten archivos JPG.";
+        $msj = "Error: Solo se permiten archivos JPG.";
     }
 
     if ($errorArchivo == 0) {
