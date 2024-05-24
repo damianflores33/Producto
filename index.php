@@ -20,7 +20,8 @@
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                   <a class="nav-link" href="./vista/productos.php">Productos</a>
-                  <a class="nav-link disabled" href="./vista/galeria.html" aria-disabled="true">Galeria</a>
+                  <a class="nav-link" href="./vista/galeria.php">Galeria</a>
+                  <!-- <a class="nav-link disabled" href="./vista/galeria.html" aria-disabled="true">Galeria</a> -->
                 </div>
               </div>
             </div>
