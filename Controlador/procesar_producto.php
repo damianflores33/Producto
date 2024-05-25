@@ -105,7 +105,7 @@ function guardarNuevoProducto(){
                             $imagen_principal,
                             $categoria);
     echo $msj;
-    header('Location: ../vista/productos.php');
+   // header('Location: ../vista/productos.php');
 }
 
 if (isset($_REQUEST["accion"]) && ($_REQUEST["accion"] == 'NUEVO PRODUCTO')){

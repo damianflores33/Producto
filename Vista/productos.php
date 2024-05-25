@@ -85,13 +85,53 @@ require_once("../Controlador/procesar_producto.php");
           ?>
       </div>
 
-      <button type="submit" class="btn btn-primary">Agregar Producto</button>
+      <button type="submit" class="btn btn-primary" id="Boton">Agregar Producto</button>
     </form>
   </div>
 
     </main>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+       $(document).ready(function() {
+  $('#Boron').submit(function(event) {
+    event.preventDefault(); // Evita la recarga de la página
+
+    var datos = {
+      $msj = "Se guardo correctamente"
+      nombreProducto: $('#nombreProducto').val(),
+      costo: $('#costo').val(),
+      precio1: $('#precioVenta1').val(),
+      precio2: $('#precioVenta2').val(),
+      stockm: $('#stockMinimo').val(),
+      stocka: $('#stockActual').val(),
+      stocka: $('#stockActual').val(),
+      imagen: $('#imagenPrincipal').val(),
+      categorias: $('#categoria').val()
+    };
+
+    $.ajax({
+      url: 'procesar.php',
+      method: 'POST',
+      data: datos,
+      dataType: 'json',
+      success: function(respuesta) {
+        if (respuesta.respuesta === 'Datos recibidos correctamente') {
+          console.log('Datos enviados correctamente');
+          // Opcional: Mostrar un mensaje de éxito al usuario
+        } else {
+          console.error('Error al enviar los datos:', respuesta.error);
+          // Opcional: Mostrar un mensaje de error al usuario
+        }
+      },
+      error: function(error) {
+        console.error('Error de red:', error);
+        // Opcional: Mostrar un mensaje de error de red al usuario
+      }
+    });
+  });
+});
+    </script>
 </body>
 </html>
