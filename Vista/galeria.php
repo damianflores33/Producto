@@ -112,6 +112,7 @@ require_once("../Controlador/procesar_producto.php");
                     data: { categorian: categoria1 },
                     dataType: 'json',
                     success: function(respuesta) {
+                        console.log(respuesta)
                         $('#respuestaccc').html(respuesta.informacion);
                     }
                 });
