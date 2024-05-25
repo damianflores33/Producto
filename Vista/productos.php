@@ -39,7 +39,7 @@ require_once("../Controlador/procesar_producto.php");
     <div class="container mt-3">
     <h1>Nuevo Producto</h1>
 
-    <form action="../Controlador/procesar_producto.php" method="post" enctype="multipart/form-data">
+    <form action="productos.php" method="post" enctype="multipart/form-data">
       <input type="hidden" id="accion" name="accion" value="NUEVO PRODUCTO">
       <div class="mb-3">
         <label for="nombreProducto" class="form-label">Nombre del Producto:</label>
@@ -85,13 +85,57 @@ require_once("../Controlador/procesar_producto.php");
           ?>
       </div>
 
-      <button type="submit" class="btn btn-primary">Agregar Producto</button>
+      <button type="submit" class="btn btn-primary" id="botonEnviar" name="botonEnviar">Agregar Producto</button>
     </form>
   </div>
 
     </main>
 
-
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../jquery/jquery_3_5_1.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#botonEnviar').click(function(event) {
+    event.preventDefault();
+
+    var datos = {
+      nombreProducto: $('#nombreProducto').val(),
+      costo: $('#costo').val(),
+      precioVenta1: $('#precioVenta1').val(),
+      precioVenta2:  $('#precioVenta2').val(),
+      stockMinimo:  $('#stockMinimo').val(),
+      stockActual:  $('#stockActual').val(),
+      imagenPrincipal:  $('#imagenPrincipal').val(),
+      categoria:  $('#categoria').val(),
+      accion:  $('#accion').val()
+    };
+
+    $.ajax({
+      url: '../Controlador/procesar_producto.php',
+      type: 'POST',
+      data: datos,
+      //dataType: 'json',
+      success: function(respuesta) {
+        alert("...");
+        alert(respuesta.mensaje); // Muestra la respuesta en una alerta
+          //window.location.href = 'galeria.php';
+        // if (respuesta.exito) {
+        //   alert(respuesta.mensaje); // Muestra la respuesta en una alerta
+        //   window.location.href = 'galeria.php'; // Redirige a galeria.html
+        // } else {
+        //   alert(respuesta.error); // Muestra el mensaje de error
+        // }
+      }
+      // ,
+      // error: function(error) {
+      //   //console.error(error); // Muestra el error en caso de fallo
+      //   alert('Error al enviar los datos'); // Muestra un mensaje genérico de error
+      // }
+    });
+  });
+});
+
+</script>
+
 </body>
 </html>

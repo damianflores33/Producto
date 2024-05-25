@@ -27,7 +27,7 @@ function selectCategoria_galeria($accion){
 
 ////////////////////////////////////////////////////////////////////
 function guardarNuevoProducto(){
-    $msj = "";
+    $msj = "Se guardo con Éxito";
     $cod_producto = "";
     $nombre_producto = "";
     $costo = 0.0;
@@ -38,8 +38,8 @@ function guardarNuevoProducto(){
     $imagen_principal = "";
     $categoria  = "";
 
-    if (isset($_REQUEST["nombre_producto"])){
-        $nombre_producto = trim($_REQUEST["nombre_producto"]); 
+    if (isset($_REQUEST["nombreProducto"])){
+        $nombre_producto = trim($_REQUEST["nombreProducto"]); 
         // echo $nombre_producto;
     }
 
@@ -47,20 +47,20 @@ function guardarNuevoProducto(){
         $costo = trim($_REQUEST["costo"]); 
     }
 
-    if (isset($_REQUEST["precio_venta_1"])){
-        $precio_venta_1 = trim($_REQUEST["precio_venta_1"]); 
+    if (isset($_REQUEST["precioVenta1"])){
+        $precio_venta_1 = trim($_REQUEST["precioVenta1"]); 
     }
 
-    if (isset($_REQUEST["precio_venta_2"])){
-        $precio_venta_2 = trim($_REQUEST["precio_venta_2"]); 
+    if (isset($_REQUEST["precioVenta2"])){
+        $precio_venta_2 = trim($_REQUEST["precioVenta2"]); 
     }
 
-    if (isset($_REQUEST["stock_minimo"])){
-        $stock_minimo = trim($_REQUEST["stock_minimo"]); 
+    if (isset($_REQUEST["stockMinimo"])){
+        $stock_minimo = trim($_REQUEST["stockMinimo"]); 
     }
 
-    if (isset($_REQUEST["stock_actual"])){
-        $stock_actual = trim($_REQUEST["stock_actual"]); 
+    if (isset($_REQUEST["stockActual"])){
+        $stock_actual = trim($_REQUEST["stockActual"]); 
     }
 
     if (isset($_REQUEST["categoria"])){
@@ -104,8 +104,16 @@ function guardarNuevoProducto(){
                             $stock_actual,
                             $imagen_principal,
                             $categoria);
-    echo $msj;
-    header('Location: ../vista/productos.php');
+    // echo $msj;
+    //echo json_encode(['mensaje' => "***"]);
+    //header('Location: ../vista/productos.php');
+    //echo "...........";
+
+        $respuesta = array(
+          'exito' => true,
+          'mensaje' => "Datos procesados correctamente",
+        );
+
 }
 
 if (isset($_REQUEST["accion"]) && ($_REQUEST["accion"] == 'NUEVO PRODUCTO')){

@@ -40,7 +40,7 @@ function InsertarNuevoProducto($nombre_producto,
 ){
     global $conn;
     $msj = "";
-    $cod_producto = $categoria . "-" . trim($imagen_principal, '.jpg');
+    $cod_producto = $categoria . "-" . trim($imagen_principal, '.jpeg');
     $sql = "INSERT INTO producto(cod_producto, nombre_producto, costo, precio_venta_1, precio_venta_2, stock_minimo, stock_actual, imagen_principal, categoria)";
     $sql .=  " VALUES (";
     $sql .= "'" . $cod_producto . "', ";
