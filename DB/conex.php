@@ -4,7 +4,7 @@ function conexion_db(){
     $dbHost = "localhost"; // Servidor de la base de datos
     $dbUser = "web"; // Nombre de usuario de la base de datos
     $dbPass = "web"; // Contraseña de la base de datos
-    $dbName = "productos"; // Nombre de la base de datos
+    $dbName = "productostienda"; // Nombre de la base de datos
 
     // Crear la conexión a la base de datos
     $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
