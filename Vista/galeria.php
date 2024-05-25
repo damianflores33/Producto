@@ -99,7 +99,7 @@ require_once("../Controlador/procesar_producto.php");
 <!-- ----------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------- -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../jquery/jquery_3_5_1.min.js"></script>
 <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
