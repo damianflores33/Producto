@@ -38,7 +38,7 @@ require_once("../Controlador/procesar_producto.php");
 
     <main>
     <div class="container mt-3">
-    <h1>Nuevo Producto</h1>
+    <h1>Productos</h1>
 
     <form action="productos.php" method="post" enctype="multipart/form-data">
       <input type="hidden" id="accion" name="accion" value="NUEVO PRODUCTO">

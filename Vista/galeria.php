@@ -27,6 +27,7 @@ require_once("../Controlador/procesar_producto.php");
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
                 <a class="nav-link" href="productos.php">Productos</a>
+                <a class="nav-link" href="consultarProductos.php">Consultar Productos</a>
                 <a class="nav-link" href="galeria.php">Galeria</a>
               </div>
             </div>
